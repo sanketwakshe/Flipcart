@@ -1,0 +1,29 @@
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import './App.css';
+import LandingPage from './pages/landing';
+
+function App() {
+  return (
+    <Router>
+      
+      <Routes>
+        {/* <Route path='/home' element=''></Route> */}
+        <Route path='/' element={<LandingPage/>}></Route>
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+
+//******************he App.js chi seeting
+
+// ani he landing page
+
+import React from 'react';
+function LandingPage () {
+    return  ( 
+        <h1>LandingPage</h1>
+     );
+}
+

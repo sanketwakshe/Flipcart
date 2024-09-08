@@ -1,0 +1,6 @@
+1.npm init
+2.npm i express
+3.npm i mongoose
+4.npm i nodemon
+5.npm i bcrypt // for hashing a password
+6.npm i http status // any errors then 401 are print 
