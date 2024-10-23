@@ -1,0 +1,14 @@
+SDLC = Software Development Life Cycle  => is a process that follow ,
+process  Planing => Defining => Desining => Building => Testing => Deployment 
+Most import process in DEOPS is 1] Building
+                                2] Tesing
+                                3] Deployment
+
+Know this 3 proces is Automation by using Deops not manually
+They are th pillor of the DeOps 
+
+**** Interview Q
+
+1] What is the pillor of devOps ?
+DevOps engineer is primarily focused on Automations of Building, testing and Deployment by writing automation Scripts thereby avoiding manual intervention, 
+so that it will improve efficiency and reduces the time for application delivery......
