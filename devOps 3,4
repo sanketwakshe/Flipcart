@@ -1,0 +1,9 @@
+1]What is the Virtual Machine ?
+=> They are the Infrastructure
+
+2]what is the tools use to Automation of the virtual machine ?
+AWS CCL Command Line Interface 
+AWS API Application Programming Interface
+AWS CFT  CloudFormation Template.
+AWS CDK Cloud Development KiT * specific for aws
+Terraform 
