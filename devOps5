@@ -1,0 +1,21 @@
+AWS CLI Command Line Interface PROCESS =>
+1] pahile cli downoad karaycha
+2] te aplya computer madhe alayka bagaych
+3] mobaxterm madhe jaun aws version takaych mg download zhalater ek mothe code yeyil
+4] aws configure 
+5] configure asthi aws console home varun accoun madhe jaun Security credentials jaych khali jaun key banvaychi
+6] tya 2 id takaychya
+7] us-east-1 nav ahe ka chake karaych
+8] mg connect zhalayka bagnya sathi aws s3 ls takaych
+9] jar coder banavleli file alitr sucessfully connect
+
+
+
+
+
+
+
+
+
+shell scripting
+Shell scripting is a way to automate tasks by writing scripts that the command-line shell of an operating system can interpret and execute.
