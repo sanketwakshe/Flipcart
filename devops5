@@ -1,0 +1,36 @@
+cronson => schell scripting la automatically sangitalelya velevarti kam karun ghene
+
+  #!/bin/bash
+##################
+#Author :sanket
+# Date:11th-Jan
+#
+# Version: v1
+#
+# This Script will report the aws resource usage
+#######################
+
+set -x
+
+# AWS S3
+# AWS EC2
+# AWS Lambda
+# AWS IAM Users
+
+# list S3 buckets
+echo "print list of s3 buckets"
+aws s3 ls
+
+# list EC2 Instances
+aws ec2 describe-instances
+
+# list lambda
+aws lambda list-functions
+
+#list IAM users
+aws iam list-users
+*************************************************
+  apan s3 ec2 lambda iam user chya info ghetlya by writing command 
+  2] jar mal ec2 madhun perticulor id kadaychi asel tr
+  =>./aws ec2describe intances | jq '.Reservation[].intances[].intancesid[]'
+   ******** he vaprun apn perticulor chi fact id gheu shakto
