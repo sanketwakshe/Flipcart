@@ -1,0 +1,69 @@
+
+1] #!/bin/bash
+#Author: sanket
+#Date:01/02/2022
+# This script outputs the node health
+#Version:v1
+** always write ameta deta first of **
+set -x #debug mode  ** he apn lihalele command echo [print] karate
+df -h
+free -g
+nproc
+2] **by using echo ** 
+= echo "print the disk space"
+df -h
+= echo "print the memory"
+free -g
+= echo "print the cpu"
+nproc
+*** ps -ef => process inter detail in the full format 
+**|** say pipe parameter //// send first output tu send the secod command 
+3] ps -ef => vaprun apn window linux madhe kiti process chalu ahet he pahato
+4] ps -ef | grep "chrome" => hyane apn linux madhe fact crome chya kiti side chalu ahe he pahu shakto
+5] jar apn 1
+           11
+           12
+           55
+ani hyachyatun jar aplyala fact 1 pahije asel tar  ./test.sh | grep 1 as lihaych
+6] date = print today date => state default command {date is system default command} => send output in stdin
+
+jdar apn date ashi without file lihali ani tila pipe threow acces karnaych praytn kela tar ti nahi yet karn date system default command ahe{stdi}
+so pipe stdi command la support kart nahi
+7] grep => aplyala ekandya perticulor name chi purn info deat
+8] awk => awk aplya la tya peticulor name chi perticulor info deta
+9] set -e => he apn set kelatar aplyala ekanda error line madje asel tar to lagech separetly milato** jo kahi error asel to separetly lihun milato
+10]set -o => hyacha use apn jo line madhe saglyat lastla ahe to chake karata
+11] curl => curl la apn ekanda data chi url deto mg to data screen varti show karnyacha kam curl karto 
+12] curl URL grep | error => apn ek file cha url ghetla ani tyatun error shodhnyach kam kel
+13] wget => wget aplyala file download karte
+14] find / root address => ekandya file madhun root add kivha kahihi shodhaych asel tr apn find / cha use karto
+
+15] if else condition
+a=4
+b=5
+if [$a > $b]
+then
+  echo "a is greater than b"
+else
+ echo  " b is greater than a"
+ fi #closed
+
+16] for loop
+# iteration -> for
+
+for i in {1.100};
+do echo$1;done
+
+for
+do
+  increment
+
+done
+17] trap => traping signels
+
+
+
+
+
+
+
