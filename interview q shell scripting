@@ -1,0 +1,23 @@
+Inteerview questions
+1]
+
+
+2]
+
+
+
+3] write a shell script to print numbers divided by 3 & 5 and not 15 [ 3 & 5 ne divisible but 15 ne nahi]
+code =>
+#!/bin/bash
+
+#############
+#
+#
+#############
+
+# Numbers divisible by 3 or 5, but not by 15
+for i in {1..100}; do
+    if (( i % 3 == 0 || i % 5 == 0 )) && (( i % 15 != 0 )); then
+        echo $i
+    fi
+done
