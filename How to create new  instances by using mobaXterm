@@ -3,6 +3,7 @@ nanter pair key banavaychi
 ti key download kontya navane hote te ahaych
 done launch karaych
 
-2]mobaXterm madhe jaun instances cha public ipv4 takaycha
+2] mobaXterm madhe jaun instances cha public ipv4 takaycha 
+   ** then specify user name he apn instances madhe kay select kelay tech takaych , aws,ubuntu ... me ubuntu kelta so ubuntu takala he takaltarch authenticate honanr 
   ti pair key chi download zhaleli file ssh madhe takaychi the 
   done authenticate
