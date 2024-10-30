@@ -1,0 +1,18 @@
+In Git, different types of branches help organize the development workflow, making it easier to manage code changes, new features, and releases. Here’s what each branch type typically means:
+
+Master Branch:
+The primary branch in a Git repository, representing the latest stable version of the code.
+It's usually kept clean and stable, containing only thoroughly tested and ready-for-production code.
+Major changes or releases are typically merged into the master branch once development and testing are complete.
+
+Feature Branch:
+A branch created for working on a specific feature or improvement.
+Feature branches allow developers to work on new features in isolation, without affecting the main codebase.
+Once the feature is complete and tested, the feature branch is merged into the main branch (often the develop or master branch).
+Naming convention is often feature/feature-name (e.g., feature/user-auth).
+
+Release Branch:
+Created when the codebase is ready for a new release.
+It serves as a final preparation branch, where bug fixes, small tweaks, or minor adjustments are made to ensure the code is stable.
+Once tested and finalized, the release branch is merged into both the master branch (for deployment) and another branch like develop (to keep it up-to-date).
+Naming convention is often release/version-number (e.g., release/1.0.0).
