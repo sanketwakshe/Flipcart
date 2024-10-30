@@ -1,19 +1,52 @@
 GITHUB
 
+versionn controle 
+imp 1] centrolized vc
+2)cvs,svn
+** fact centrolized lach pass karu shakto kahi changes so te long time sathi kam karat nahi
 
+imp 2] distrubuted vc 
+1)git,github
+** hyachya madhe apn copy tayar karu shakto anek code chi so te easy distrubuted karu shakto ani systeam crash hot nahi
 
+imp 3] fork => create a copy of original source code 
 
+imp 4] git => Git is a distributed version control system that tracks changes in your code.
+It lets you manage code history, create branches, and merge changes locally.
+Git is command-line based and operates on your computer, allowing you to work offline.
+{open source code koni pan vapru shakt download karu shakta }
 
-
-
+imp 5] GitHub is a web-based platform that hosts Git repositories. 
+It provides a user-friendly interface for managing repositories, collaborating with others, and contributing to open-source projects.
+GitHub also adds features like pull requests, issue tracking, and social networking for developers, making it easier to work with a team and track progress.
 
 
 
   **Git Command
   1] git => git install ahe ka nahi he bagnyasathi
-  2] git init =>
+  2] git init => install ahe ka nahi
   3]
   4]
   5] git status => git  cha current status bagnya sathi
   6] git add => syntax = git add additionTwoNo.sh ekandi file banvali ahe ani tila track vatri anyasathi git add use
   7] git diff => exact kelela changes sangnar  
+  8] git log => kiti changes kelet te samjt
+  9] git commit -m " first change"  *** he kartan jar email vagare magital tar 1]git config --global user.email "you@example.com"
+                                                                                2]git config --global user.name "Your Name"
+                                                                                3]git config user.email "you@example.com"
+                                                                                 4]git config user.name "Your Name"
+                                                                                  5]git config --global --list
+10] cat file name => hyane apn file madhal calculation pahu shakto
+11] git reset --hard 1ee11acd90e349eb0be52fdeec3d9751d7c6bb21 [he id git log madhun milate] 
+hyane apn direct konti filee ahe tikade jau shakto
+
+
+
+
+
+
+
+process
+1] vi ne file
+2] git add file name
+3] git commit -m ne commit
