@@ -1,0 +1,41 @@
+CONFIGURATION MANAGMENT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ansible interview quesstion
+1] ansible which language use for programing?
+=> python
+2] they are support linux or window?
+=> both linux + window
+   linux => support protocol is use ssh
+  window => support protocol is use winRm
+3] diff puppet and ansible || why you use ansible our other managment tools ?
+=> ansible use push method
+  they work agentless
+  good support to linux and window
+
+
+4] is ansible push or pull method use
+=> push 
+5] ansible which programing language use
+=> yamail
+6] ansible support cloud provider
+=> aws azure ecp does not matter about cloud provide 
+  wgat matter 1] your public ip address
+              2] ssh enable to this machine
+              3] this machine is publically asesible or not 
+in window allowed => if winram permission then they are allowed
+
+            
