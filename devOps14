@@ -1,16 +1,10 @@
 CONFIGURATION MANAGMENT
 
-
-
-
-
-
-
-
-
-
-
-
+Configuration Management : is the process of systematically handling changes to a system in a way that maintains its integrity over time.
+TOOLS
+Ansible Overview: Ansible is an open-source automation tool that simplifies the process of managing infrastructure. 
+It is known for its simplicity, agentless architecture, and use of YAML files  to define automation scripts. 
+Ansible is commonly used for tasks like configuration management, application deployment,  and continuous delivery.
 
 
 
