@@ -1,13 +1,6 @@
 using ansible server target server fetch
-
-
-
-
-
-
-
 raw
-*passwordless authentication steps
+***********passwordless authentication steps
 1] ansible should be able to communicate with the target
 2] set ansible instancess to public id use in ssh --- then te aplyala deskttop varti private id show karate
 ssh che setup zhalyav 
@@ -29,7 +22,41 @@ ssh che setup zhalyav
 
 
 *****************************************************************************************
+*** write ansible playbook ***
+
 14] inventory file = manage groups of servers or network devices.
 15] ansible adhoc command vs ansible platbook command
 14] ansible adhoc command = for one or two task
 15] ansible platbook command = for multiple task
+***********************************************************************************
+steps:=
+*touch inventory file [he file apn banvaychi]  
+*tya file madhe targetch private id
+*ansible -i inventory all -m "shell" -a "touch devopsclass"
+**vi first-playbook.yml
+---
+- name: Install and start nginx
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Install nginx
+    apt:
+      name: nginx
+      state: present
+  - name: Start nginx
+    service:
+       name: nginx
+       state: started
+
+
+* ansible-playbook -i inventory first-playbook.yml [ playbook will bw run ]
+*sudo systemcctl status nginx
+*sudo apt install nginx [ nginx -v] 
+40.00 pasun bg 
+
+
+
+
+ 
+
