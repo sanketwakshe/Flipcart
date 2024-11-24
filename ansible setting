@@ -10,18 +10,26 @@ raw
 *passwordless authentication steps
 1] ansible should be able to communicate with the target
 2] set ansible instancess to public id use in ssh --- then te aplyala deskttop varti private id show karate
-3] then this terminal install ansible and check version
-4]then start conection enter command **ssh-keygen**
+ssh che setup zhalyav 
+3] sudo apt update
+3] sudo apt install ansible
+3] ansible --version
+4] ssh 173.45.63.67 [private ip address]
+4] then start conection enter command **ssh-keygen**
+4] 
 5] tyachya nantr ls /home/ubuntu/ .shh 
 6] mag 2 id yenar 
 7] cat /home/ubuntu/ .shh/id.pub
 8] id yeyil mag dusra  new terminal open tikade dusaryache puvlic id takun ek navun session ugadaych
 9]tikadepan ssh-keygen karaych mg id ghenyasathi he command  ls ~/.ssh/
 10] then ek vi open he command vi ~/.ssh/authorized_keys
-11] then tyachya atmadhe pahilya terminal madhe aleli ti  id ji s=asel ti ekade paste karun save karaych
-12] then pahilya terminal madhe jaun ssh ani 2 terminalchui private id takayche ani yes karaych zhal login
+11] then tyachya atmadhe pahilya terminal madhe aleli ti  id ji sasel ti tikade paste karun save karaych
+12] then * pahilya terminal madhe jaun ssh ani dusrya  terminalchui private id takayche ani yes karaych zhal login
 13] ajun ek server asel tr pahili ji mothi id aleli ti copy karaychi ani 3 la vi karun tyat tkaychi then xhal login as continue kiti pan hyala karu shakto
 
 
 *****************************************************************************************
 14] inventory file = manage groups of servers or network devices.
+15] ansible adhoc command vs ansible platbook command
+14] ansible adhoc command = for one or two task
+15] ansible platbook command = for multiple task
