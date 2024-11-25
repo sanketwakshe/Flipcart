@@ -1,3 +1,50 @@
 IOC = Infrastructure as Code (IaC) is a way to manage and set up IT infrastructure (like servers, networks, databases) using code instead of doing it manually. It allows you to write scripts or configurations to define how your systems should work, making them easy to create, update, and replicate automatically.
 
 TERRAFORM = Terraform is an open-source tool used for Infrastructure as Code (IaC). It allows you to define, provision, and manage your cloud infrastructure using a simple, human-readable configuration language called HashiCorp Configuration Language (HCL) or JSON
+
+
+
+*****create a instances by using mobaxterm ******[by using code]
+1] cd
+2] mkdir s_terraform
+3] cd  s_terraform
+
+4] vi main.tf
+ha code hya file madhe
+then create configuration file vi main.tfterraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.77"  # Adjusted to use version 5.77.0 or higher
+    }
+  }
+
+  required_version = ">= 1.2.0"
+}
+
+provider "aws" {
+  region = "us-west-2"
+}
+
+resource "aws_instance" "app_server" {
+  ami           = "ami-830c94e3"  # Replace with a valid AMI ID
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "Terraform_Demo"
+  }
+}
+paste this cade
+chake the region and set this region in aws nahitr run nahi honar
+5] aws configure
+6] terraform init
+7] terraform plan
+8] terraform apply
+
+***** aws madhe pahila code cha ani tikadcha instance chake karaycha
+
+
+
+
+
+
