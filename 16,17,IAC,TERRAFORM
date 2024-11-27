@@ -11,11 +11,13 @@ TERRAFORM = Terraform is an open-source tool used for Infrastructure as Code (Ia
 
 4] vi main.tf
 ha code hya file madhe
-then create configuration file vi main.tfterraform {
+then create configuration file vi main.tf
+
+terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 5.77"  # Adjusted to use version 5.77.0 or higher
+      version = "~> 5.77" 
     }
   }
 
@@ -27,7 +29,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "app_server" {
-  ami           = "ami-830c94e3"  # Replace with a valid AMI ID
+  ami           = "ami-830c94e3" 
   instance_type = "t2.micro"
 
   tags = {
@@ -45,6 +47,25 @@ chake the region and set this region in aws nahitr run nahi honar
 
 
 
+module = module is a way of writing reusable component 
 
+2] what is state file and advantageus of state file ?
+= 1]  Store your state files remotely, not on your local machine!
+  It's better to save the state file in a remote location (like a cloud storage bucket or Terraform Cloud).
+  2] It is not a good idea to store the state file in source control
+  3] Do not manipulate the state file
+     Never manually edit the state file—it’s not meant to be changed by hand.
+
+
+tell me about your terraform setup , are you using state file locally or git file ?
+= 
+In a typical Terraform setup, there are two main options for managing the Terraform state file:
+1] State File Locally
+  Description: The state file is stored on your local machine, usually in the same directory as your Terraform project. This is the default behavior.
+2]  Remote State 
+  The state file is stored in a shared location, such as 
+  1] git 2] cloud 3] terraform cloud/enterprise
+   Local State: Good for small projects or one-person teams.
+   Remote State: Essential for team collaboration or production environments.
 
 
