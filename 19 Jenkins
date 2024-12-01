@@ -1,23 +1,118 @@
+In jenkins i will prepare 3 Item
+    1]Freestyle project
+    2]pipeline
+    3]multibranch pipeline
 
 
+**1] freestyle project = A freestyle project is an open-ended initiative where you have creative freedom to choose its direction, scope, and methods.
 
+*steps* = Source Code Management
+            select Git
+            Provide Repo
+            Credentials
 
+         Build Steps
+           SELECT - Execute Windows batch command ?
+           command - echo "hello"
+         SAVE
+Build
 
+2]  Pipeline = A pipeline is a sequence of steps or processes that work together to complete a task or produce a result. It’s commonly used in areas like software development, data processing, and manufacturing to make tasks efficient, automated, and organized.
+[**here we will write declarative code , gives github links ]
 
+ *steps* = Selects Discard old builds 
+           Max of builds to keep = 2 
+           Pipeline [ in the pipeline first you chake format and chake hellow world program ]
+           then write a code 
+****The structure of of code 
+pipeline {
+    agent any
 
+    tools {
+        jdk 'jdk17'
+        maven 'maven3'
+    }
 
+    stages {
+        stage('Git Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/jaiswaladi246/Ekart.git' ****[Generate a code link by using pipeline syntax]
+            }
+        }
 
+        stage('Compile') {
+            steps {
+                sh 'mvn clean compile -DskipTests=true'
+            }
+        }
 
-
-
-
-jenkin pipeline =  here we will write declarative code , gives github links 
-
+        stage('OWASP Scan') {
+            steps {
+                dependencyCheck additionalArguments: '--scan ./', odcInstallation: 'DP'
+                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+            }
+        }
 
 
 in pipeline 1] frontend use nodejs
             2] backend use java maven
             3] database use owaps
+
+
+
+SonarQube Analysis = SonarQube analysis is the process of evaluating the quality, security, and maintainability of code using the SonarQube platform. SonarQube is a popular open-source tool that performs static code analysis to identify issues in source code. It helps developers improve their code by providing actionable feedback on problems like bugs, vulnerabilities, code smells, and technical debt.
+They are also count the LOC Line of code
+* Pipeline code :
+pipeline {
+    agent any
+
+    tools {
+        jdk 'jdk17'
+        maven 'maven3'
+    }
+
+    environment {
+        SCANNER_HOME = tool 'sonar'
+    }
+
+    stages {
+        stage('Git Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/jaiswaladi246/Ekart.git'
+            }
+        }
+
+        stage('Compile') {
+            steps {
+                sh 'mvn clean compile -DskipTests=true'
+            }
+        }
+
+        stage('OWASP Scan') {
+            steps {
+                dependencyCheck additionalArguments: '--scan ./', odcInstallation: 'DP'
+                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+            }
+        }
+
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('sonar-server') {
+                    sh ''' 
+                        $SCANNER_HOME/bin/sonar-scanner \
+                        -Dsonar.projectName=Shopping-cart \
+                        -Dsonar.java.binaries=. \
+                        -Dsonar.projectKey=Shopping-cart
+                    '''
+                }
+            }
+        }
+**Docker : Docker is an open-source platform that helps developers create, deploy, and run applications in lightweight, portable containers. A Docker container is a standalone unit that packages an application and its dependencies, making it easy to run the application consistently across different environments. 
+
+
+
+
+
 
 
 
