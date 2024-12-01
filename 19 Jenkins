@@ -18,3 +18,33 @@ jenkin pipeline =  here we will write declarative code , gives github links
 in pipeline 1] frontend use nodejs
             2] backend use java maven
             3] database use owaps
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sonarQube = use security line of code 
+
+
+
+
+
+
+
+
+
+multibranch pipeline = jar ekach repo madhe vegveglya branch astil ani tya t jr jenkins chi file asel tar jya repo madhe jenkins chi file ahe tich branch fact disnar he apn multibranch ne karu shakto
