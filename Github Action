@@ -1,1 +1,39 @@
+POM.XML FILE = pom.xml focuses on Java project dependencies and build management.
+GITHUB ACTION = GitHub Actions focuses on automating workflows, including building and testing Maven projects.
+**Action File Sample
+name: Node.js CI Workflow
 
+# Trigger the workflow on push or pull request to the main branch
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# Define jobs to be run
+jobs:
+  build:
+    # Specify the environment
+    runs-on: ubuntu-latest
+
+    # Steps to execute in the job
+    steps:
+      # Step 1: Check out the code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run tests
+      - name: Run tests
+        run: npm test
