@@ -2,3 +2,95 @@ CI/CD = CI/CD stands for Continuous Integration
                          Continuous Deployment/Delivery. 
 It is a software development practice used to automate the process of building, testing, and deploying code. 
 CI/CD pipelines ensure faster, safer, and more reliable software delivery.
+
+
+
+
+** CI/CD interview q [https://github.com/iam-veeramalla/Jenkins-Zero-To-Hero/blob/main/Interview_Questions.md]
+
+1] what are the diff way to trigger jenkins 
+=   - Poll SCM: Jenkins can periodically check the repository for changes and automatically build if changes are detected. 
+              This can be configured in the "Build Triggers" section of a job.
+              
+  - Build Triggers: Jenkins can be configured to use the Git plugin, which allows you to specify a Git repository and branch to build. 
+              The plugin can be configured to automatically build when changes are pushed to the repository.
+              
+  - Webhooks: A webhook can be created in GitHub to notify Jenkins when changes are pushed to the repository. 
+              Jenkins can then automatically build the updated code. This can be set up in the "Build Triggers" section of a job and in the GitHub repository settings.
+
+*  Webhooks = Webhooks in Jenkins are used to start jobs automatically when something important happens in another tool, like GitHub. Instead of checking all the time for changes (polling), Jenkins waits for a "message" from the tool to know when to start.
+            [ in web hook jar github madhe kahi commit change kel ter lagech pipeline madhe automaticaly change karaych kam web hooks karto]
+
+2]  can you explain cicd process in your current project and can you talk about  any cicd process that you have implemented ?
+ = A: In the current project we use the following tools orchestrated with Jenkins to achieve CICD.
+
+Maven, Sonar, AppScan, ArgoCD, and Kubernetes
+1. Code Commit: Developers commit code changes to a Git repository hosted on GitHub.
+2. Jenkins Build: Jenkins is triggered to build the code using Maven. Maven builds the code and runs unit tests.
+3. Code Analysis: Sonar is used to perform static code analysis to identify any code quality issues, security vulnerabilities, and bugs.
+4. Security Scan: AppScan is used to perform a security scan on the application to identify any security vulnerabilities.
+5. Deploy to Dev Environment: If the build and scans pass, Jenkins deploys the code to a development environment managed by Kubernetes.
+6. Continuous Deployment: ArgoCD is used to manage continuous deployment. ArgoCD watches the Git repository and automatically deploys new changes to the development environment as soon as they are committed.
+7. Promote to Production: When the code is ready for production, it is manually promoted using ArgoCD to the production environment.
+8. Monitoring: The application is monitored for performance and availability using Kubernetes tools and other monitoring tools.
+
+3] What is the jenkins backup ?
+= A backup in Jenkins means creating a copy of important Jenkins files, such as job configurations, plugins, and user settings, so you can restore them if something goes wrong (like a system crash).
+Key files to back up:
+Jenkins home directory (JENKINS_HOME): Contains all job data, configuration, and plugins.
+Configuration files: Job-specific .xml files and the config.xml.
+Plugins: Installed plugins and their versions.
+User data: Authentication and authorization info.
+
+4] How do you store/handle/secure secrete in jenkins ?
+= 
+In Jenkins, secrets like passwords, API keys, or tokens are stored and handled securely using Credentials Management. 
+- Credentials Plugin: Jenkins provides a credentials plugin that can be used to store secrets such as passwords, API keys, and certificates. The secrets are encrypted and stored securely within Jenkins, and can be easily retrieved in build scripts or used in other plugins.
+   
+- Environment Variables: Secrets can be stored as environment variables in Jenkins and referenced in build scripts. However, this method is less secure because environment variables are visible in the build logs.
+   
+***- Hashicorp Vault: Jenkins can be integrated with Hashicorp Vault, which is a secure secrets management tool. Vault can be used to store and manage sensitive information, and Jenkins can retrieve the secrets as needed for builds.
+   
+- Third-party Secret Management Tools: Jenkins can also be integrated with third-party secret management tools such as AWS Secrets Manager, Google Cloud Key Management Service, and Azure Key Vault.
+
+5]  What is latest version of Jenkins or which version of Jenkins are you using ?
+= jenkins --version [ 2024 = 2,487] chake in ubuntu/linux
+
+6]  What is shared modules in Jenkins ?
+= Shared modules in Jenkins refer to a collection of reusable code and resources that can be shared across multiple Jenkins jobs. This allows for easier maintenance, reduced duplication, and improved consistency across multiple build processes. For example, shared modules can be used in cases like:
+- Plugins: Common plugins can be installed once as a shared module and reused across multiple jobs, reducing the overhead of managing plugins on individual jobs.
+
+7] : can you use Jenkins to build applications with multiple programming languages using different agents in different stages ?
+=  Yes, Jenkins can be used to build applications with multiple programming languages by using different build agents in different stages of the build process.
+Jenkins supports multiple build agents, which can be used to run build jobs on different platforms and with different configurations. By using different agents in different stages of the build process, you can build applications with multiple programming languages and ensure that the appropriate tools and libraries are available for each language.
+For example, you can use one agent for compiling Java code and another agent for building a Node.js application. The agents can be configured to use different operating systems, different versions of programming languages, and different libraries and tools.
+
+8]How to add a new worker node in Jenkins ?
+= Log into the Jenkins master and navigate to Manage Jenkins > Manage Nodes > New Node. Enter a name for the new node and select Permanent Agent. Configure SSH and click on Launch.
+
+9]How to add a new plugin in Jenkins ?
+= Using the CLI, java -jar jenkins-cli.jar install-plugin <PLUGIN_NAME> [ pluging install karaych ] 
+Using the UI,
+Click on the "Manage Jenkins" link in the left-side menu.
+Click on the "Manage Plugins" link.
+
+10] What is JNLP and why is it used in Jenkins ?
+= In Jenkins, JNLP is used to allow agents (also known as "slave nodes") to be launched and managed remotely by the Jenkins master instance. This allows Jenkins to distribute build tasks to multiple agents, providing scalability and improving performance.
+When a Jenkins agent is launched using JNLP, it connects to the Jenkins master and receives build tasks, which it then executes. The results of the build are then sent back to the master and displayed in the Jenkins user interface.
+
+11] What are some of the common plugins that you use in Jenkins ?
+= Dockers , git , pipeline 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
