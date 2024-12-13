@@ -1,0 +1,97 @@
+MERJ Application Deploy By Using DOCKER 
+THEY ARE THREE TIRE APPLICATIN 
+          |
+MERN = Presentation 
+       Buisness Logic
+       Data
+  -----------------------------------------------------------------------------
+git clone https://github.com/iam-veeramalla/MERN-docker-compose.git
+docker run --name=frontend --network=mern -d -p 5173:5173 mern-frontend
+cd MERN-docker-compose
+docker run --name=frontend --network=mern -d -p 5173:5173 mern-frontend
+FROM node:18.9.1
+
+WORKDIR /app 
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 5173
+
+CMD ["npm","run","dev"]
+
+docker network create mern
+docker start frontend
+docker network ls
+docker logs frontend
+  ----------------------------------------------------------------------------------
+  docker run --network=mern --name mongodb -d -p 27017:27017 -v ~/opt/data:/data/db mongo 
+ -------------------------------------------------------------------------------------- 
+cd ../backend
+docker build -t mern-backend .
+
+docker run --network=mern --name=backend -d -p 5050:5050 mern-backend
+FROM node:18.9.1
+
+WORKDIR /app 
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 5070
+
+CMD ["npm","start"]
+  --------------------------------------------------------
+docker ps
+docker rm -f 9ff58837cf00 1710411cea42 ee266ff6c699 [all delete]
+
+---------------------------------------------------------------------------------------
+  ** hyane ekach docker compose file lihali ani ekach command varti sagl run kel  [ compose mhnje multipe container ekach veli run arne]
+** docker compose up -d
+  
+services:
+  backend:
+    build: ./mern/backend
+    ports:
+      - "5050:5050" 
+    networks:
+      - mern_network
+    environment:
+      MONGO_URI: mongodb://mongo:27017/mydatabase  
+    depends_on:
+      - mongodb
+
+  frontend:
+    build: ./mern/frontend
+    ports:
+      - "5173:5173"  
+    networks:
+      - mern_network
+    environment:
+      REACT_APP_API_URL: http://backend:5050 
+
+  mongodb:
+    image: mongo:latest  
+    ports:
+      - "27017:27017"  
+    networks:
+      - mern_network
+    volumes:
+      - mongo-data:/data/db  
+
+networks:
+  mern_network:
+    driver: bridge 
+
+volumes:
+  mongo-data:
+    driver: local  # Persist MongoDB data locally
+
+
+      **** compose vaprun without aws docker use karun project run kela
