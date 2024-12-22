@@ -1,1 +1,40 @@
-mfk
+A multi-stage Docker build is a way to create smaller and more efficient Docker images by using multiple stages in a single Dockerfile.
+Each stage can use a different base image, and only the final stage's result is included in the final image.
+# Build stage
+FROM node:16 AS build
+WORKDIR /app
+COPY . .
+RUN npm install && npm run build
+
+# Production stage
+FROM node:16-slim
+WORKDIR /app
+COPY --from=build /app/dist /app/dist
+CMD ["node", "dist/server.js"]
+----------------------------------------------------------------------------------------------------------------------------------
+Distroless images are very small Docker images that only include what is needed to run your application.
+They don't have extra tools or system packages (like a shell or package manager), making them smaller and more secure. They're focused only on the essentials for running the app.
+[most sequred]
+# Build stage
+FROM node:16 AS build
+WORKDIR /app
+COPY . .
+RUN npm install && npm run build
+
+# Production stage with distroless
+FROM gcr.io/distroless/nodejs
+WORKDIR /app
+COPY --from=build /app/dist /app
+CMD ["server.js"]
+In this example, the production stage uses a distroless Node.js image (gcr.io/distroless/nodejs), which contains only the runtime environment needed to execute the Node.js application, making it much smaller and more secure.
+
+-----------------------------------------------------------------------------------------------------------------------------
+Docket volume and
+ docker volume create sanket
+ docker run -d --mount source=snginx:latest
+
+
+
+
+
+
