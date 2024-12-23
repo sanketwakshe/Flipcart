@@ -29,8 +29,41 @@ CMD ["server.js"]
 In this example, the production stage uses a distroless Node.js image (gcr.io/distroless/nodejs), which contains only the runtime environment needed to execute the Node.js application, making it much smaller and more secure.
 
 -----------------------------------------------------------------------------------------------------------------------------
-Docket volume and
- docker volume create sanket
+Docket volume and Mount
+***Docker Volume***
+Definition:
+A Docker Volume is a storage mechanism managed by Docker itself, designed to persist data outside the container's file system.
+It allows containers to retain data even when they are stopped or removed.
+
+Explanation:
+When you create a container, its file system is temporary and tied to the container's lifecycle. 
+If the container is deleted, all its data is lost. To solve this, Docker provides volumes to store data separately from the container.
+Volumes are stored on the host but are abstracted by Docker, so you don’t directly interact with the host file system.
+
+docker volume create sanket
+docker volume ls
+docker rm sanket
+docker rim sanket
+----------------------------------------------------------------------------------------------------------------------------------------
+*** Docker Mount *** 
+Docker Mount
+Definition:
+Docker Mount is a feature that allows attaching storage to a container, enabling users to specify how and where host directories or files are mounted into the container.
+
+Explanation:
+The --mount option provides greater control over how storage is used compared to volumes. You can explicitly define the source (host directory or file), target (container path), and options like read/write permissions. It’s more flexible and detailed, but also slightly more complex to use than volumes.
+
+Example Use Case:
+
+A developer mounts the current project directory into a container to test changes in real-time without copying files manually.
+
+** Feature	Docker Volume	Docker Mount
+
+Management	 |  Fully managed by Docker                        |	User manually specifies host paths
+Syntax	     |  -v or --volume	                               | --mount
+Best        |   For	Persistent, long-term storage of container | data	Temporary or real-time access to host files
+
+*command 
  docker run -d --mount source=snginx:latest
 
 
