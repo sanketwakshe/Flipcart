@@ -1,1 +1,97 @@
- ck
+1] what is the docker ?
+= Docker is the open source containerization. Docker is a tool that allows you to package and run applications in isolated environments called containers.
+  It simplifies the process of deploying, managing, and scaling applications by making them portable and consistent across different systems
+
+2] What is the container ?
+= A container is a lightweight, portable, and isolated environment where an application runs.
+It includes everything the application needs, such as code, libraries, and dependencies, so the application can run consistently on any system or environment. 
+Unlike virtual machines, containers share the host operating system's kernel, making them faster and more efficient.
+Containers ensure that the application works the same way, no matter where it's run – whether on your laptop, a server, or in the cloud.
+
+3] what is docker cli ?
+= The Docker CLI (Command Line Interface) is a tool used to interact with Docker from the command line. It allows users to manage Docker containers, images, networks, and volumes, as well as to execute commands on Docker hosts.
+ex run, stop, build
+
+4] Diff betwn Virtual machine and Docker container 
+container                                                      |    Virtual machine
+Shares the host OS kernel.                                     |  Runs a full OS (guest OS) on top of the host OS.
+Faster, uses fewer resources.                                  | Slower, more resource-intensive.
+Isolation	Isolated but shares the host OS.	                    | Full isolation with a separate OS for each VM.          [contianer light weight ahe fact je hav tech ghrnar purn os ghenar nahi ani fast ahe ,,, virtual machine purn os install karte ani jara slow ahe ]
+Portability	Highly portable, can run anywhere with Docker      | Less portable, depends on specific hardware or hypervisor.
+support.	
+Use Case	Best for consistent and efficient app deployment.     | 	Suitable for running different OS environments.
+
+
+5] What is the docker life cycle ?
+= Create a Dockerfile: Users define a Dockerfile containing instructions to build an image. This includes selecting a base image, installing dependencies, and defining commands.
+  * [code madhech ek file cha format ahe jyachyat kay kay run karaych packges he sagl lihaych]
+******
+# Use an official Python runtime as the base image
+FROM python:3.8-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the current directory contents into the container
+COPY . /app
+
+# Install any needed packages
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Make port 80 available
+EXPOSE 80
+
+# Define environment variable
+ENV NAME World
+
+# Run app.py when the container launches
+CMD ["python", "app.py"]
+****
+  Build a Docker Image: The Dockerfile is used to create a Docker image, which acts as a blueprint for the container. It is like a snapshot in a virtual machine.
+  * docker build -t <image-name>:<tag> 
+  * docker rmi <image-name>:<tag> // image remove 
+  Run a Docker Container: The Docker image is executed to create a running container, which is the active, working instance of the application.
+  * docker run -d --name <container-name> <image-name>:<tag>
+  * docker start <container-name>
+  * docker stop <container-name>
+  * docker rm <container-name>
+6] what is the docker component ?
+= Docker Engine	= The core service responsible for managing containers and images.
+Docker Images = 	Read-only templates that contain the application and its dependencies.
+Docker Containers	= Running instances of Docker images that isolate applications.
+Docker Registries =	Repositories for storing and sharing Docker images (e.g., Docker Hub, private registries).
+Docker Volumes	= Persistent storage used to store data outside of containers, allowing data to persist.
+Docker Networks	= Virtual networks used for container communication and isolation.
+Docker Compose =	Tool to define and run multi-container applications with a single command using a YAML file.
+
+7] Diff betwn Docker copy and add ?
+= Docker copy which can copy only file from host system into the container & Docker add can copy the file from URL 
+
+8] Diff betwn CMD & Entry point command ?
+= Cli arguments using the docker run command will *override the argument* specified using the cmd instruction // CMD provides default arguments or a command that can be overridden at runtime.
+  ENTRYPOINT sets the main command to be run when the container starts and is hard to override
+
+9] what is diff type of Docker Networking ?
+Bridge = IS a Default network [ What it is Default network : When you create a container without specifying a network, Docker automatically connects it to the bridge network.]
+Host   = 
+Overlay = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
