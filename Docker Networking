@@ -1,1 +1,22 @@
 
+Docker Networking: Definition
+Docker networking allows communication between Docker containers, the host machine, and external systems.
+It provides a way for containers to discover and interact with each other or with services outside of the Docker environment.
+Docker networking is essential for creating isolated environments, scaling applications, and enabling services to communicate securely and efficiently.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+* Types 
+1] The bridge network is the default network type in Docker for standalone containers. 
+It allows containers on the same Docker host to communicate with each other while isolating them from external networks.
+Containers connected to a bridge network can reach each other by name or IP address.[host ani containerch ip address ha vegla aslatar tyan connect karnyasthi bridge networking vaprtat]
+Example 
+docker run -d --name logout nginx:latest // bridge network sathi banvlela container 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2] Host Networking 
+In Docker, host networking refers to the networking mode where the container shares the network namespace with the host machine.
+This means the container does not have its own separate IP address, and it directly uses the host's IP address and network interfaces.
+As a result, containers running with host networking can access the network exactly as the host does, without any network isolation between the host and the container.
+[Hyachi ip adress nasto]
+
+Example
+docker run -d --name host-demo --network=host nginx:latest
