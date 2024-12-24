@@ -1,0 +1,25 @@
+1] What are the component are present in worker node in kubernets ?
+= The worker node in Kubernetes is responsible for running the application workloads and is equipped with several key components.
+These components ensure that the node can communicate with the control plane, manage containers, and maintain networking and runtime environments.
+ 1] Kubelet =  Tt is mentaining the pod . It is responsible for pod is runing or not
+
+2] Container Runtime: A software responsible for running containers.
+Function:
+Pulls container images from container registries.
+Starts, stops, and manages container lifecycles.
+Examples:
+Dockerstim
+containerd
+CRI-O
+3] Kube-Proxy
+A network proxy and load balancer that runs on each worker node.
+Function:
+Manages network rules to allow communication between Pods within the cluster.
+Ensures Pods can communicate with each other and external services through Kubernetes Services.
+
+2] controler manager 
+1] API server
+2] Scheduler
+3] ETCD
+4] Contoller manage
+5] Cloud control manager 
