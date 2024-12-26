@@ -1,0 +1,14 @@
+Crome Install kubectl  [https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/]
+then window
+chocolate click copy this link and paste powershall administer run right sside
+choco copy first command and put cmd administer / copy all command in cmd
+cd %USERPROFILE%
+mkdir .kube
+Theen go to file folder window c and user chake .kube and create new text file name configure 
+then cd.kube
+saglyat khalijaun minikube chocolate madhe install karaych[command copy] /then run into the cmd administore
+then * minikube start
+docker madhe mg image banel
+*docker ps
+* minikube dashboard / *minikube status /*
+[Docker sodun apn dusre pan use karu shakto ofiicial document varti drive page ahe tikdeun bagaych pan te aplya pc madhe install asl pahije]  // [ minikube start --docker=[konta pan driver official page varun]
