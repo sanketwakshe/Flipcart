@@ -1,0 +1,14 @@
+Deploy React based project on Kubernetes
+1] create react project
+2] Create Dockerfile and inside content is 
+FROM node:20
+
+WORKDIR /myapp
+
+COPY . .
+
+RUN npm install
+
+CMD ["npm","start"]
+
+Then push on docker steps 
